@@ -1,0 +1,20 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the feeds_excel module.
+ */
+
+/**
+ * Implements hook_enable().
+ */
+function feeds_excel_enable() {
+  cache_clear_all('plugins:feeds:plugins', 'cache');
+}
+
+/**
+ * Implements hook_requirements().
+ */
+function feeds_excel_requirements($phase) {
+
+}
