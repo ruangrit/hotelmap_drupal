@@ -203,13 +203,16 @@ a {
       console.log(strArray);
 
       $.each(strArray, function( index, value ) {
-          $(rooms[value]).trigger('click');
+          //$(rooms[value]).trigger('click');
+          $(lineTo['lineTo'+value]).fadeIn(1000);
+          $(rooms[value]).attr({'fill': '#830051'});
           if (hasNumbers(value)) {
             console.log('number');
             for (var i = 1; i <= 5; i++) {
                   if (value.indexOf(i) > -1) {
                     console.log(i);
-                    $(rooms['Crowne_'+i]).trigger('click');
+                    $(lineTo['lineToCrowne_'+i]).fadeIn(1000);
+                    $(rooms['Crowne_'+i]).attr({'fill': '#830051'});
 
                   } 
             }
@@ -283,8 +286,8 @@ a {
       $.each(rooms, function(index, value) {
         $(rooms[index]).click(function () {
           //hideAllLine(lineTo);
-          $(this).attr({'fill': '#FF0000'});
-          lineTo['lineTo'+index].fadeIn(1000);
+          //$(this).attr({'fill': '#FF0000'});
+          //lineTo['lineTo'+index].fadeIn(1000);
         });
       });
 
