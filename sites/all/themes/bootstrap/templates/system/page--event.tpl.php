@@ -187,9 +187,48 @@ a {
 <script>
 
   
-  var triggerMap = function(lineToShow, count) {
-      $('.jumbotron').hide();
-      $('#svgObject').show();
+    var rooms = {};
+    var hideAllLine;
+    var lineTo;
+
+    var hasNumbers = function (t)
+    {
+      var regex = /\d/g;
+      return regex.test(t);
+    }  
+
+    var showMultipleLine = function(roomArray) {
+      hideAllLine(lineTo);
+      var strArray = roomArray.split("+");
+      console.log(strArray);
+
+      $.each(strArray, function( index, value ) {
+          $(rooms[value]).trigger('click');
+          if (hasNumbers(value)) {
+            console.log('number');
+            for (var i = 1; i <= 5; i++) {
+                  if (value.indexOf(i) > -1) {
+                    console.log(i);
+                    $(rooms['Crowne_'+i]).trigger('click');
+
+                  } 
+            }
+
+          }
+      });
+    }
+
+    var clearColor = function () {
+        $.each(rooms, function(index, value) {
+          $(value).attr({'fill': '#F0C9DF'});
+        });
+    }
+
+    window.onload=function() {
+
+      $(document).ready(function () {
+
+      // Get the Object by ID
       var a = document.getElementById("svgObject");
       // Get the SVG document inside the Object tag
       var svgDoc = a.contentDocument;
@@ -199,12 +238,12 @@ a {
 
       console.log(svgItem);
       if (typeof svgItem[1] == "undefined") {
-        //$('body').hide();
-        //location.reload();
+        $('body').hide();
+        location.reload();
       }
       // Set the colour to something else
       //svgItem.setAttribute("fill", "lime");
-      var lineTo = {};
+      lineTo = {};
       lineTo['lineToBar'] = $(svgItem[0]).find('polyline');
       lineTo['lineToLumpini'] = $(svgItem[1]);
       lineTo['lineToCrowne_5'] = $(svgItem[2]);
@@ -216,47 +255,43 @@ a {
       lineTo['lineToSilom'] = $(svgItem[10]).find('polyline');
       lineTo['lineToSathorn'] = $(svgItem[11]);
 
-      var hideAllLine = function (lineTo) {
+      hideAllLine = function (lineTo) {
         // Hide all navigator
         $.each(lineTo, function(index, value) {
           value.hide();
         });
+        clearColor()
       }
+
 
       hideAllLine(lineTo);
 
-      lineTo[lineToShow].fadeIn(1000);
-      if (count == 1) {
-        setTimeout(function(){
-          triggerMap(lineToShow, 2)
-
-        }, 100);
-      }
-
-      //count++;
-      /*
-      if (roomId) {
-        $(rooms[roomId]).trigger('click');
-        console.log(roomId);
-        console.log($(rooms[roomId]));
-
-      }
-      */
-
-      var counter = 0;
-        var i = setInterval(function(){
-
-          $('.jumbotron').show();
-          $('#svgObject').hide();
-          counter++;
-          if(counter === 10) {
-              clearInterval(i);
-          }
-      }, 10000);
+      var roomsTmp = $(svgItem[0]).find('rect');
+      var roomsTmp2 = $(svgItem[0]).find('polygon');
+      rooms['Silom'] = roomsTmp[0];
+      rooms['Saladaeng'] = roomsTmp[1];
+      rooms['Sathorn'] = roomsTmp[2];
+      rooms['Crowne_1'] = roomsTmp[3];
+      rooms['Crowne_2'] = roomsTmp[4];
+      rooms['Crowne_3'] = roomsTmp[5];
+      rooms['Crowne_4'] = roomsTmp[6];
+      rooms['Crowne_5'] = roomsTmp[7];
+      rooms['Lumpini'] = roomsTmp2[1];
+      rooms['Bar'] = roomsTmp2[2];
+      
+      // Bind rooms click for show line   
+      $.each(rooms, function(index, value) {
+        $(rooms[index]).click(function () {
+          //hideAllLine(lineTo);
+          $(this).attr({'fill': '#FF0000'});
+          lineTo['lineTo'+index].fadeIn(1000);
+        });
+      });
 
 
-  }
-
+      });
+    console.log('onload');
+  };
 </script>
 </head>
 
@@ -264,17 +299,9 @@ a {
 <body>
 <?php print $messages; ?>
     <div class="container">
-      <div class="jumbotron">
-        <img src="http://bangkoklumpinipark.crowneplaza.com/uploads/new_optimized_images_22august/Meeting_at_Crowne_Plaza_Bangkok_Lumpini_Park_Optimized03_Silom.jpg" width="100%" id="img1" class="img-main">
-
-        <img src="http://bangkoklumpinipark.crowneplaza.com/uploads/new_optimized_images_22august/Meeting_at_Crowne_Plaza_Bangkok_Lumpini_Park_Optimized04_Sathorn.jpg" alt="Sathorn Room - flexible seating, creative meeting space, natural light" width="100%" style="display:none" id="img2" class="img-main">
-
-        <img src="http://bangkoklumpinipark.crowneplaza.com/uploads/new_optimized_images_22august/Meeting_at_Crowne_Plaza_Bangkok_Lumpini_Park_Optimized02.jpg" alt="Crowne Ballroom- flexible seating, creative meeting space, natural light" width="100%" style="display:none" id="img3" class="img-main">
-        <p style="margin-top:20px;">Enjoy a delectable selection of creative creations, complemented by unrivalled, bird’s eye view of Bangkok.</p>
-      </div>
 
       <div id="map" style="text-align:center">
-        <object id="svgObject" data="sites/all/themes/bootstrap/templates/system/map4.svg" type="image/svg+xml" height="300px" style="display:none">
+        <object id="svgObject" data="sites/all/themes/bootstrap/templates/system/map4.svg" type="image/svg+xml" height="300px">
         Your browser doesn't support SVG
         </object>
       </div>
@@ -302,7 +329,7 @@ a {
               <?php print $tmp_value->title; ?>
             </div>
             <div class="col-md-3">
-              <img src="<?php print file_create_url($tmp_value->field_image['und'][0]['uri']);?>" width="100px" onClick="triggerMap('lineToLumpini', 1);">
+              <img src="<?php print file_create_url($tmp_value->field_image['und'][0]['uri']);?>" width="100px" onClick="showMultipleLine('<?php print $tmp_value->field_room_name['und'][0]['value'];?>');">
             </div>
           </div>
 

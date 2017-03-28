@@ -222,6 +222,10 @@ a {
 <script>
   $ = jQuery;
 
+  var rooms = {};
+  var hideAllLine;
+  var lineTo;
+
   var getUrlParameter = function getUrlParameter(sParam) {
       var sPageURL = decodeURIComponent(window.location.search.substring(1)),
           sURLVariables = sPageURL.split('&'),
@@ -236,6 +240,12 @@ a {
           }
       }
   };
+
+  var clearColor = function () {
+      $.each(rooms, function(index, value) {
+        $(value).attr({'fill': '#F0C9DF'});
+      });
+  }
 
 
     window.onload=function() {
@@ -258,7 +268,7 @@ a {
       }
       // Set the colour to something else
       //svgItem.setAttribute("fill", "lime");
-      var lineTo = {};
+      lineTo = {};
       lineTo['lineToBar'] = $(svgItem[0]).find('polyline');
       lineTo['lineToLumpini'] = $(svgItem[1]);
       lineTo['lineToCrowne_5'] = $(svgItem[2]);
@@ -270,18 +280,19 @@ a {
       lineTo['lineToSilom'] = $(svgItem[10]).find('polyline');
       lineTo['lineToSathorn'] = $(svgItem[11]);
 
-      var hideAllLine = function (lineTo) {
+      hideAllLine = function (lineTo) {
         // Hide all navigator
         $.each(lineTo, function(index, value) {
           value.hide();
         });
+        clearColor();
       }
 
       hideAllLine(lineTo);
 
       var roomsTmp = $(svgItem[0]).find('rect');
       var roomsTmp2 = $(svgItem[0]).find('polygon');
-      var rooms = {};
+      rooms = {};
       rooms['Silom'] = roomsTmp[0];
       rooms['Saladaeng'] = roomsTmp[1];
       rooms['Sathorn'] = roomsTmp[2];
@@ -298,7 +309,7 @@ a {
         $(rooms[index]).click(function () {
           hideAllLine(lineTo);
           lineTo['lineTo'+index].fadeIn(1000);
-          //$(this).attr({'fill': '#FF0000'});
+          $(this).attr({'fill': '#FF0000'});
         });
       });
 
