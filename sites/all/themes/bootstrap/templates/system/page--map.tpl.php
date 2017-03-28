@@ -313,7 +313,7 @@ a {
         });
       });
 
-
+      $(rooms['Lumpini']).attr({'fill': '#F0C9DF'});
       // Trigger map click
       var roomTrigger = getUrlParameter('room');
       if (typeof roomTrigger !== "undefined") {

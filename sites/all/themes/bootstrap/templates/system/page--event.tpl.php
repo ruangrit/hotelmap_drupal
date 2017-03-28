@@ -291,6 +291,8 @@ a {
       rooms['Lumpini'] = roomsTmp2[1];
       rooms['Bar'] = roomsTmp2[2];
       
+
+      $(rooms['Lumpini']).attr({'fill': '#F0C9DF'});
       // Bind rooms click for show line   
       $.each(rooms, function(index, value) {
         $(rooms[index]).click(function () {
