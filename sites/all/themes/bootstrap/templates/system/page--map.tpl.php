@@ -309,7 +309,7 @@ a {
         $(rooms[index]).click(function () {
           hideAllLine(lineTo);
           lineTo['lineTo'+index].fadeIn(1000);
-          $(this).attr({'fill': '#FF0000'});
+          $(this).attr({'fill': '#830051'});
         });
       });
 

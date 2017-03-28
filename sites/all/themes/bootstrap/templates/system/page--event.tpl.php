@@ -137,10 +137,10 @@ a {
 
 /* Supporting marketing content */
 .marketing {
-  margin: 40px 0;
+  padding: 40px 0;
 }
 .marketing p + h4 {
-  margin-top: 28px;
+  padding-top: 28px;
 }
 
 /* Responsive: Portrait tablets and up */
@@ -180,6 +180,15 @@ a {
   }
   .row img {
     cursor: pointer;
+  }
+  .row-event {
+    cursor: pointer;
+    padding-bottom: 35px;
+    border-bottom: 1px solid #eee;
+    padding-top: 10px;
+  }
+  .row-event:hover {
+    background: #eee;
   }
 }
 
@@ -318,7 +327,7 @@ a {
         foreach ($views as $key => $value) {
           $tmp_value = $value->_field_data['nid']['entity']
           ?>
-          <div class="row active">
+          <div class="row active row-event" onClick="showMultipleLine('<?php print $tmp_value->field_room_name['und'][0]['value'];?>');">
             <div class="col-md-2">
               <strong><?php print $tmp_value->field_event_subject['und'][0]['value'];?></strong>
             </div>
@@ -336,7 +345,7 @@ a {
             </div>
           </div>
 
-          <hr>
+          
 
 
           <?php
