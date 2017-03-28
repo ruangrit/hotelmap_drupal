@@ -230,9 +230,4 @@ a {
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
   </body>
-  <?php
-  $val = date('Y-m-d', (42768-25569)*86400);
-
-  print_r($val);
-  ?>
 </html>

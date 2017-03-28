@@ -205,7 +205,7 @@ a {
 <body>
 
 <div id="map">
-  <object id="svgObject" data="sites/all/themes/bootstrap/templates/system/map4.svg" type="image/svg+xml" height="500px">
+  <object id="svgObject" data="sites/all/themes/bootstrap/templates/system/map6.svg" type="image/svg+xml" height="500px">
   Your browser doesn't support SVG
   </object>
 </div>

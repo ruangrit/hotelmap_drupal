@@ -301,7 +301,7 @@ a {
     <div class="container">
 
       <div id="map" style="text-align:center">
-        <object id="svgObject" data="sites/all/themes/bootstrap/templates/system/map4.svg" type="image/svg+xml" height="300px">
+        <object id="svgObject" data="sites/all/themes/bootstrap/templates/system/map6.svg" type="image/svg+xml" height="300px">
         Your browser doesn't support SVG
         </object>
       </div>
