@@ -343,7 +343,15 @@ a {
               <?php print $tmp_value->title; ?>
             </div>
             <div class="col-md-3">
-              <img src="<?php print file_create_url($tmp_value->field_image['und'][0]['uri']);?>" width="100px" onClick="showMultipleLine('<?php print $tmp_value->field_room_name['und'][0]['value'];?>');">
+              <?php
+                if ($tmp_value->field_image['und'][0]['uri']) {
+                  $file_url = file_create_url($tmp_value->field_image['und'][0]['uri']);
+                }
+                else {
+                  $file_url = "sites/default/files/default_images/300px-No_image_available.svg_.png";
+                }
+              ?>
+              <img src="<?php print $file_url;?>" width="100px" onClick="showMultipleLine('<?php print $tmp_value->field_room_name['und'][0]['value'];?>');">
             </div>
           </div>
 
