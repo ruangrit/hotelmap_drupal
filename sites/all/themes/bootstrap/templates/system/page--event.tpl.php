@@ -184,7 +184,7 @@ a {
   .row-event {
     cursor: pointer;
     padding-bottom: 35px;
-    border-bottom: 1px solid #eee;
+    border-top: 1px solid #eee;
     padding-top: 10px;
   }
   .row-event:hover {
