@@ -1,0 +1,7 @@
+<?php
+// $Id: myhook.module,v 1.1 2010/08/23 01:24:21 ufku Exp $
+
+function myhook_node_presave($node) {
+  $node->field_event_start_time_24_hour_['und'][0]['value'] = trim($node->field_event_start_time_24_hour_['und'][0]['value']);
+  $node->field_event_end_time_24_hour_['und'][0]['value'] = trim($node->field_event_end_time_24_hour_['und'][0]['value']);
+}
