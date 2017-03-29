@@ -344,7 +344,7 @@ a {
             </div>
             <div class="col-md-3">
               <?php
-                if ($tmp_value->field_image['und'][0]['uri']) {
+                if (isset($tmp_value->field_image['und'][0]['uri'])) {
                   $file_url = file_create_url($tmp_value->field_image['und'][0]['uri']);
                 }
                 else {
