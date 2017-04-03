@@ -115,7 +115,7 @@ a {
 /* Customize container */
 @media (min-width: 768px) {
   .container {
-    max-width: 730px;
+    max-width: 80%;
   }
 }
 .container-narrow > hr {
@@ -315,13 +315,13 @@ a {
     <div class="container">
 
       <div id="map" style="text-align:center">
-        <object id="svgObject" data="sites/all/themes/bootstrap/templates/system/map6.svg" type="image/svg+xml" height="300px">
+        <object id="svgObject" data="sites/all/themes/bootstrap/templates/system/map6.svg" type="image/svg+xml" style="width:30em">
         Your browser doesn't support SVG
         </object>
       </div>
 
 
-      <div class="marketing">
+      <div class="marketing" style="height:40em; overflow:scroll">
       <?php
         $events = node_load_multiple(array(), array('type' => 'event', 'status' => 1));
         $views = views_get_view_result('event_order', 'page');
@@ -361,13 +361,13 @@ a {
           <?php
         }
       ?>
+
+    </div> <!-- /container -->
       <div class="footer">
       <a href="home"><button type="button" class="btn btn-lg btn-primary">BACK TO MAIN PAGE</button></a>
       <a href="map"><button type="button" class="btn btn-lg btn-primary">GO TO HOTEL MAPS</button></a>
         
       </div>
-
-    </div> <!-- /container -->
 
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->

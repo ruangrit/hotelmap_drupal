@@ -116,7 +116,7 @@ a {
 /* Customize container */
 @media (min-width: 768px) {
   .container {
-    max-width: 730px;
+    max-width: 80%;
   }
 }
 .container-narrow > hr {
