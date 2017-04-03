@@ -115,7 +115,7 @@ a {
 /* Customize container */
 @media (min-width: 768px) {
   .container {
-    max-width: 80%;
+    max-width: 100%;
   }
 }
 .container-narrow > hr {
@@ -180,16 +180,29 @@ a {
   }
   .row img {
     cursor: pointer;
+
   }
   .row-event {
     cursor: pointer;
     padding-bottom: 35px;
     border-top: 1px solid #eee;
     padding-top: 10px;
+    width:100%;
   }
   .row-event:hover {
     background: #eee;
   }
+
+  .noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+  }
+
 }
 
 </style>
@@ -315,13 +328,13 @@ a {
     <div class="container">
 
       <div id="map" style="text-align:center">
-        <object id="svgObject" data="sites/all/themes/bootstrap/templates/system/map6.svg" type="image/svg+xml" style="width:30em">
+        <object id="svgObject" data="sites/all/themes/bootstrap/templates/system/map6.svg" type="image/svg+xml" style="width:65em">
         Your browser doesn't support SVG
         </object>
       </div>
 
 
-      <div class="marketing" style="height:40em; overflow:scroll">
+      <div class="marketing" style="height:50em; overflow:scroll;">
       <?php
         $events = node_load_multiple(array(), array('type' => 'event', 'status' => 1));
         $views = views_get_view_result('event_order', 'page');
@@ -329,7 +342,7 @@ a {
         foreach ($views as $key => $value) {
           $tmp_value = $value->_field_data['nid']['entity']
           ?>
-          <div class="row active row-event" onClick="showMultipleLine('<?php print $tmp_value->field_room_name['und'][0]['value'];?>');">
+          <div class="row active row-event noselect" onClick="showMultipleLine('<?php print $tmp_value->field_room_name['und'][0]['value'];?>');">
             <div class="col-md-2">
               <strong><?php print $tmp_value->field_event_subject['und'][0]['value'];?></strong>
             </div>

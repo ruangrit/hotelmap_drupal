@@ -116,7 +116,7 @@ a {
 /* Customize container */
 @media (min-width: 768px) {
   .container {
-    max-width: 80%;
+    max-width: 100%;
   }
 }
 .container-narrow > hr {
@@ -205,7 +205,7 @@ a {
 <body>
 
 <div id="map">
-  <object id="svgObject" data="sites/all/themes/bootstrap/templates/system/map6.svg" type="image/svg+xml" style="width:35em">
+  <object id="svgObject" data="sites/all/themes/bootstrap/templates/system/map6.svg" type="image/svg+xml" style="width:65em">
   Your browser doesn't support SVG
   </object>
 </div>

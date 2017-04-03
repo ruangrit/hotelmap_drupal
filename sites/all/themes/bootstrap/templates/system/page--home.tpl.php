@@ -79,6 +79,7 @@ body {
   padding-top: 20px;
   padding-bottom: 20px;
   color: #9d0e6b;
+  font-size: 1.6em !important;
 }
 
 a {
@@ -110,13 +111,13 @@ a {
 .footer {
   padding-top: 19px;
   color: #777;
-  border-top: 1px solid #e5e5e5;
+  margin-top: 35em;
 }
 
 /* Customize container */
-@media (min-width: 768px) {
+@media (min-width: 100%) {
   .container {
-    max-width: 80%;
+    max-width: 100%;
   }
 }
 .container-narrow > hr {
@@ -135,12 +136,15 @@ a {
 
 /* Supporting marketing content */
 .marketing {
-  margin: 40px 0;
+  margin: 60px 0;
 }
 .marketing p + h4 {
   margin-top: 28px;
 }
 
+.marketing h4{
+  font-size: 1.5em;
+}
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   /* Remove the padding we set earlier */
@@ -168,6 +172,13 @@ a {
   h1 {
     font-size: 50px !important;
   }
+  .link {
+    margin: 10em !important;
+    line-height: 2.5em;
+  }
+  .main-icon {
+  
+  }
 }
 
 </style>
@@ -178,32 +189,44 @@ a {
 
     <div class="container">
       <div class="jumbotron">
-      <img src="http://bangkoklumpinipark.crowneplaza.com/uploads/images/logo/crowne-plaza-logo.png" alt="crowne-plaza-logo.png">
-        <h1>WELCOME TO LUMPINI</h1>
-        <p class="lead">Enjoy a delectable selection of creative creations, complemented by unrivalled, bird’s eye view of Bangkok.</p>
+      <img src="http://bangkoklumpinipark.crowneplaza.com/uploads/images/logo/crowne-plaza-logo.png" alt="crowne-plaza-logo.png" style="padding:2em;">
+        <h1 style="padding:0.5em;">WELCOME TO LUMPINI</h1>
+        <p class="lead" style="margin:1.5em;">Enjoy a delectable selection of creative creations, complemented by unrivalled, bird’s eye view of Bangkok.</p>
       </div>
 
       <div class="row marketing">
-        <div class="col-lg-6">
-          <a href="event">
+        <div class="col-md-6">
+          <a href="event" class="link">
+            <div class="main-icon">
+              <img src="sites/all/themes/bootstrap/templates/system/event-calendar-symbol-icon.png" width="64">
+            </div>
             <h4>TODAY'S EVENT</h4>
             <p>Touch here for all event information.</p>
             
           </a>
 
 
-          <a href="#">
+          <a href="#" class="link">
+            <div class="main-icon">
+              <img src="sites/all/themes/bootstrap/templates/system/information-icon.png" width="64">
+            </div>
             <h4>LOCAL INFORMATION</h4>
             <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
           </a>
         </div>
 
-        <div class="col-lg-6">
-          <a href="map">
+        <div class="col-md-6">
+          <a href="map" class="link">
+            <div class="main-icon">
+              <img src="sites/all/themes/bootstrap/templates/system/map-icon.png" width="64">
+            </div>
             <h4>HOTEL MAPS</h4>
             <p>Touch here for find your way around our hotel.</p>
           </a>
-          <a href="#">
+          <a href="#" class="link">
+            <div class="main-icon">
+              <img src="sites/all/themes/bootstrap/templates/system/information-icon2.png" width="64">
+            </div>
             <h4>HOTEL INFORMATION</h4>
             <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
           </a>
