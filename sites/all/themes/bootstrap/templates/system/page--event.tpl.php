@@ -194,16 +194,15 @@ a {
   }
 
   .noselect {
-  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
+                                }
   }
-
-}
 
 </style>
 <script>
@@ -334,7 +333,7 @@ a {
       </div>
 
 
-      <div class="marketing" style="height:50em; overflow:scroll;">
+      <div class="marketing" style="height:45em; overflow:scroll;">
       <?php
         $events = node_load_multiple(array(), array('type' => 'event', 'status' => 1));
         $views = views_get_view_result('event_order', 'page');

@@ -79,7 +79,14 @@ body {
   padding-top: 20px;
   padding-bottom: 20px;
   color: #9d0e6b;
-  font-size: 1.6em !important;
+  font-size: 2em !important;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
 }
 
 a {
@@ -111,7 +118,7 @@ a {
 .footer {
   padding-top: 19px;
   color: #777;
-  margin-top: 35em;
+  margin-top: 18em;
 }
 
 /* Customize container */
@@ -170,7 +177,7 @@ a {
     border-color: #751052 !important;
   }
   h1 {
-    font-size: 50px !important;
+    font-size: 60px !important;
   }
   .link {
     margin: 10em !important;
@@ -180,55 +187,89 @@ a {
   
   }
 }
+.tuch-info {
+  padding-top: 1.5em;
+  display: none;
+}
 
+.marketing img {
+  margin-top: 10px;
+}
 </style>
 </head>
 
 
 <body>
-
     <div class="container">
       <div class="jumbotron">
       <img src="http://bangkoklumpinipark.crowneplaza.com/uploads/images/logo/crowne-plaza-logo.png" alt="crowne-plaza-logo.png" style="padding:2em;">
         <h1 style="padding:0.5em;">WELCOME TO LUMPINI</h1>
-        <p class="lead" style="margin:1.5em;">Enjoy a delectable selection of creative creations, complemented by unrivalled, bird’s eye view of Bangkok.</p>
+        <p class="lead" style="margin:1.5em;font-size:1.4em;">Enjoy a delectable selection of creative creations, complemented by unrivalled, bird’s eye view of Bangkok.</p>
       </div>
-
+      <div class="tuch-info text-center">
+        <h2>TUCH SCEEN</h2>
+      </div>
       <div class="row marketing">
         <div class="col-md-6">
           <a href="event" class="link">
-            <div class="main-icon">
-              <img src="sites/all/themes/bootstrap/templates/system/event-calendar-symbol-icon.png" width="64">
+
+            <div class="row">
+              <div class="col-sm-2">
+                <img src="sites/all/themes/bootstrap/templates/system/event-calendar-symbol-icon.png" width="64">
+                
+              </div>
+              <div class="col-sm-10">
+                <h4>TODAY'S EVENT</h4>
+                <p>Touch here for all event information.<br /><br /></p>
+
+              </div>
             </div>
-            <h4>TODAY'S EVENT</h4>
-            <p>Touch here for all event information.</p>
             
           </a>
 
 
           <a href="#" class="link">
-            <div class="main-icon">
-              <img src="sites/all/themes/bootstrap/templates/system/information-icon.png" width="64">
+            <div class="row">
+              <div class="col-sm-2">
+                <img src="sites/all/themes/bootstrap/templates/system/information-icon.png" width="64">
+                
+              </div>
+              <div class="col-sm-10">
+                  <h4>LOCAL INFORMATION</h4>
+                  <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+                
+              </div>
             </div>
-            <h4>LOCAL INFORMATION</h4>
-            <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
           </a>
         </div>
 
         <div class="col-md-6">
           <a href="map" class="link">
-            <div class="main-icon">
-              <img src="sites/all/themes/bootstrap/templates/system/map-icon.png" width="64">
+            <div class="row">
+              <div class="col-sm-2">
+                <img src="sites/all/themes/bootstrap/templates/system/map-icon.png" width="64">
+                
+              </div>
+              <div class="col-sm-10">
+                    <h4>HOTEL MAPS</h4>
+                    <p>Touch here for find your way around our hotel.</p>
+                
+              </div>
             </div>
-            <h4>HOTEL MAPS</h4>
-            <p>Touch here for find your way around our hotel.</p>
+
           </a>
           <a href="#" class="link">
-            <div class="main-icon">
-              <img src="sites/all/themes/bootstrap/templates/system/information-icon2.png" width="64">
+            <div class="row">
+              <div class="col-sm-2">
+                <img src="sites/all/themes/bootstrap/templates/system/information-icon2.png" width="64">
+                
+              </div>
+              <div class="col-sm-10">
+                      <h4>HOTEL INFORMATION</h4>
+                      <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+                
+              </div>
             </div>
-            <h4>HOTEL INFORMATION</h4>
-            <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
           </a>
         </div>
       </div>
