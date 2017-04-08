@@ -228,6 +228,13 @@ a {
           //$(rooms[value]).trigger('click');
           $(lineTo['lineTo'+value]).fadeIn(1000);
           $(rooms[value]).attr({'fill': '#830051'});
+
+          if (value.indexOf('Sala Daeng') > -1) {
+              $(lineTo['lineToSaladaeng']).fadeIn(1000);
+              $(rooms['Saladaeng']).attr({'fill': '#830051'});
+
+          }
+
           if (hasNumbers(value)) {
             console.log('number');
             for (var i = 1; i <= 5; i++) {
