@@ -222,6 +222,7 @@ a {
       hideAllLine(lineTo);
       var strArray = roomArray.split("+");
       console.log(strArray);
+      var roomsActive = [];
 
       $.each(strArray, function( index, value ) {
           //$(rooms[value]).trigger('click');
@@ -234,12 +235,20 @@ a {
                     console.log(i);
                     $(lineTo['lineToCrowne_'+i]).fadeIn(1000);
                     $(rooms['Crowne_'+i]).attr({'fill': '#830051'});
+                    roomsActive.push(i);
 
                   } 
             }
 
           }
       });
+      if (roomsActive.length == 2) {
+          for (var i = roomsActive[0]+1; i <= roomsActive[1]-1; i++) {
+            $(lineTo['lineToCrowne_'+i]).fadeIn(1000);
+            $(rooms['Crowne_'+i]).attr({'fill': '#830051'});
+          }
+
+      }
     }
 
     var clearColor = function () {

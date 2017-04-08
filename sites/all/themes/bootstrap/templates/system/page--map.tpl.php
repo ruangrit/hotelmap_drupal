@@ -203,7 +203,15 @@ a {
 </style>
 </head>
 <body>
+<div style="text-align:center">
+  <br /><br />
+  <button type="button" class="btn btn-lg btn-primary">Level 1</button>
+  <button type="button" class="btn btn-lg btn-primary">Level 2</button>
+  <button type="button" class="btn btn-lg btn-primary">Level 3</button>
+  <button type="button" class="btn btn-lg btn-primary">Level 4</button>
+  <br /><br />
 
+</div>
 <div id="map">
   <object id="svgObject" data="sites/all/themes/bootstrap/templates/system/map6.svg" type="image/svg+xml" style="width:65em">
   Your browser doesn't support SVG
